@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("---자동 형 변환---");
+      console.log(100 + 2); // 105
+      console.log(100 + "2"); // 1002 (숫자가 문자로 변해서 연결됨)
+      // +만 이어붙어짐
+      console.log(100 * "2"); // 200 (곱셈은 문자가 숫자로)
+      console.log(100 - "2"); // 98 (뺄셈은 문자가 숫자로)
+      console.log(100 / "2"); // 50 (나눗셈은 문자가 숫자로)
+      console.log(100 % "2"); // 0 (나머지 연산은 문자가 숫자로)
+      // 자바는 덧셈(+)만 되고, 나머지는 컴파일 에러가 납니다.
+
+      console.log(100 * "abc"); // NaN (Not a Number) : 숫자로 바꿀수 없는 값이 들어오면 NaN이 된다.
+      console.log(100 + "abc"); // 100abc (문자열로 바뀌어서 연결됨)
+
+      console.log("---수동 형 변환 문자 -> 숫자---");
+      let priceText = "123";
+      let price = Number(priceText);
+
+      console.log(typeof priceText); // string
+      console.log(typeof price); // number
+      console.log(price + 100); // 223 (문자열이 숫자로 바뀌어서 계산됨)
+
+      // 숫자로 바꿀수 없는 문자를 바꾸면 NaN(not a numer)이 된다.
+      console.log(Number("abc")); // NaN
+      // 주의할점 - 만약 빈 문자열을 숫자로 형변환 하면 0으로 바뀐다.
+      console.log(Number("")); // 0
+
+      console.log("--- 수동 형 변환 숫자 -> 문자---");
+      let count = 456;
+      let countText = String(count);
+      console.log(typeof countText); // string
+      console.log(countText + "개 입니다");
+
+      console.log("---4. 입력 값은 항상 문자열이다.---");
+      let input1 = "10";
+      let input2 = "20";
+
+      console.log(input1 + input2); // 1020 (문자열로 연결됨)
+      console.log(Number(input1) + Number(input2)); // 30 (숫자로
+    </script>
+  </body>
+</html>

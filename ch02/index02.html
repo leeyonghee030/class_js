@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 자주 쓰는 자료형 세가지
+      let age = 25; // number
+      let ninkname = "홍길동"; // string
+      let isDeveloper = true; // boolean
+
+      // 2. 값이 없을 을 뜻하는 두가지
+      let emptyBox; // undefined : 상자를 만들고 아무것도 안넣은 상태
+      let nothing = null; // 개발자가 일부러 비워둔다고 직접 넣는값
+
+      // 3. typeof 로 타입을 확인한다
+      console.log(typeof age); // number
+      console.log(typeof ninkname); // string
+      console.log(typeof isDeveloper); // boolean
+      console.log(typeof emptyBox); // undefined
+      console.log(typeof nothing); // object
+
+      console.log(typeof 10); // 정수든 소수이든 nuber로 확인됨
+      console.log(typeof 10.5);
+
+      // 실험: 변수 안에 들어간 값이 null 값인지 여부를 확인 하고 싶다면 어떻게 해야할까?
+      console.log(nothing === null); // true
+    </script>
+  </body>
+</html>

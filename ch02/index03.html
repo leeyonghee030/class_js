@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("1. ---산술연산자---");
+      let a = 10;
+      let b = 3;
+
+      console.log(a + b); // 13
+      console.log(a - b); // 7
+      console.log(a * b); // 30
+      console.log(a / b); // 3.3333333333333335
+      console.log(a % b); // 1
+
+      console.log("2. ---할당 연산자---");
+      let point = 100;
+      point += 50; // point = point + 50
+      console.log(point); // 150
+
+      point -= 30; // point = point - 30
+      console.log(point); // 120
+
+      pouint++; // point = point + 1
+      console.log(point); // 121
+
+      point--; // point = point - 1
+      console.log(point); // 120
+
+      console.log("3. ---비교 연산자---");
+      console.log(10 > 5); // true
+      console.log(10 < 5); // false
+
+      console.log(10 === 10); // true
+      console.log(10 !== 10); // false
+
+      console.log("4. ---논리 연산자---");
+      console.log(true && false); // false
+      console.log(true || false); // true
+      console.log(!true); // false
+
+      console.log("5. ---연산자 우선순위---");
+      // 곱하기/나누기 가 더하기/빼기 보다 우선순위가 높다.
+      console.log(2 + 3 * 4); // 14
+      // 헷갈리묜 소괄호로 묶는다
+      console.log((2 + 3) * 4); // 20
+    </script>
+  </body>
+</html>
