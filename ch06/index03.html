@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("콜백을 화살표 함수로 바꾸면 this 버그 해결가능");
+
+      const timer = {
+        seconds: 3,
+        label: "요리타이머",
+        start: function () {
+          console.log(this.label + " 시작" + this.seconds + "초");
+
+          setTimeout(() => {
+            console.log(this.label + ": 요리 끝");
+          }, 3000);
+        },
+      };
+
+      console.log("2. forEach 도 마찬가지로 해결된다");
+      const shop = {
+        name: "코딩상점",
+        products: ["바나나", "키위"],
+        printAll: function () {
+          this.products.forEach((p) => {
+            console.log(this.name + " - " + p);
+          });
+        },
+      };
+      shop.printAll();
+
+      console.log("3. 주의 : 메서드 자체를 화살표 함수로 만들지말자 ");
+
+      const wrongShop = {
+        name: "잘못된 상점",
+        introduce: () => {
+          //화살표함수는 this 가없어서 이 블록 ; 끝났 밖에   this를 가르켜  window 를 가르킴
+          console.log("이름" + this.name);
+        },
+      };
+
+      console.log("4. 축약 메서드 문법: 메서드는 이렇게 사용하자");
+
+      const rightShop = {
+        name: "올바른 상점",
+        products: ["마우스", "키보드"],
+        introduce() {
+          console.log("이름 : " + this.name);
+        },
+      };
+      rightShop.introduce();
+
+      wrongShop.introduce();
+    </script>
+  </body>
+</html>

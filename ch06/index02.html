@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const timer = {
+        seconds: 3,
+        label: "요리타이머",
+        start: function () {
+          console.log(this.label + " 시작" + this.seconds + "초");
+
+          setTimeout(() => {
+            console.log(this.label + ": 요리 끝");
+          }, 3000);
+        },
+      };
+
+      timer.start();
+      // 이 메서드 안에 콜배 함수에서 사용하고 있는 this는 window를 가르킨다
+
+      console.log("3. for each에서도 같은일이 발생한다");
+
+      const shop = {
+        name: "코딩상점",
+        products: ["마우스", "키보드", "모니터"],
+        printAll: function () {
+          this.products.forEach((p) => {
+            console.log(this.name + " - " + p);
+          });
+        },
+      };
+      shop.printAll();
+    </script>
+  </body>
+</html>

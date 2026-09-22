@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="product-list"></div>
+    <script>
+      console.log("1. 숫자 배열 변환");
+
+      const numbers = [1, 2, 3, 4, 5];
+      const doubled = numbers.map((n) => {
+        return n * 2;
+      });
+
+      const doubled2 = [];
+      for (let i = 0; i < numbers.length; i++) {
+        doubled2[i] = numbers[i] * 2;
+      }
+
+      const products = [
+        { id: 1, name: "무선마우스", price: 25000, stock: 3 },
+        { id: 2, name: "기계식 키보드", price: 89000, stock: 0 },
+        { id: 3, name: "모니터 받침대", price: 15000, stock: 12 },
+      ];
+
+      const names = products.map((p) => p.name);
+      console.log(names);
+
+      console.log(numbers);
+      console.log(doubled);
+      console.log(doubled2);
+
+      // 객체 배열을 html 문자열 배열로
+
+      const cardList = products.map((p) => {
+        return `
+          <div class="card">
+            <h3>${p.name}</h3>
+            <p>${p.price.toLocaleString()}원</p>
+            <p>${p.stock}</p>
+            </div>
+        `;
+      });
+      console.log(cardList);
+
+      document.getElementById("product-list").innerHTML = cardList.join("");
+    </script>
+  </body>
+</html>

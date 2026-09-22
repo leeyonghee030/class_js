@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let stock = 0;
+      (console, console.log(stock || "재고없음"));
+
+      // 2. ?? null 병합 연산자 : null과 undefinded일떄만 오른쪽 값을 쓴다.
+      console.log(stock ?? "재고없음"); // 0은 null도 아니고  undefinded도 아니므로
+
+      let discount = null;
+      console.log(discount ?? 0);
+
+      //3.
+      let comment = "";
+      console.log(comment || "댓글없음");
+      console.log(comment ?? "댓글없음");
+
+      let isAgree = false;
+      console.log(isAgree || true);
+      console.log(isAgree ?? true);
+
+      // 진짜 없을떄 ?? 오른쪽 기본값으로 설정한다.
+    </script>
+  </body>
+</html>
