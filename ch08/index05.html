@@ -37,12 +37,19 @@
       //2. 상품 하나를 카드 html로 바꾸는 함수
       function makeCard(product) {
         return `
-          <div class="card">
+          <div class="card" data-id="${product.id}">
             <strong>${product.name}</strong> - ${product.price}원
             </div>
         `;
       }
 
+      function makeDetail(product) {
+        return `
+          <div class="card">
+            ${product.name}/ ${product.price.toLocaleString()}원 / 재고 ${product.stock}개
+            </div>
+        `;
+      }
       // 3.검색어에 맞는 상품만 골라서 롸면에 그리는 함수
       function render(keyword) {
         // filter : 이름에 검색어가 포함된것만
@@ -61,6 +68,16 @@
 
       searchInput.addEventListener("input", (event) => {
         render(event.currentTarget.value);
+      });
+
+      // 클릭시 상세정보 보여주기
+      productList.addEventListener("click", (event) => {
+        const cardElement = event.target;
+
+        const productId = Number(cardElement.dataset.id);
+        const selectedProduct = products.find((p) => p.id === productId);
+
+        detail.innerHTML = makeDetail(selectedProduct);
       });
 
       // 결과가 없을떄
